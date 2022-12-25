@@ -5,10 +5,15 @@ namespace MvcBook.Models
 {
     public class Books
     {
+        public Books()
+        {
+            Commentaries = new HashSet<Commentaries>
+        }
         private List<Books> Book { get; set; }
         [Key]
         [Required]
-        public virtual Users B_Id { get; set; }
+        public int B_Id { get; set; }
+        public virtual ICollection<Commentaries> Commentaries { get; set; }
         [Required]
         public string B_Name { get; set; }
         public string B_Author { get; set; }
